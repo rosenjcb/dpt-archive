@@ -2,11 +2,12 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './Search.css';
 import Axios from 'axios';
+import PostList from './PostList';
 
 export default class Search extends React.Component {
     constructor(props){
         super(props);
-        this.state = { query: '', results: [] };
+        this.state = { query: '', results: [], anyResults: false };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -21,10 +22,10 @@ export default class Search extends React.Component {
     }
 
     handleSubmit(e) {
-        console.log(this.state.query);
+        //console.log(this.state.query);
         Axios.get('http://localhost:8080/search?q=' + this.state.query)
             .then((response) => {
-                this.setState({results: response.data.hits})
+                this.setState({results: response.data.hits.hits, anyResults: true})
                 console.log(this.state.results)
             })
             .catch(function (error){
@@ -39,18 +40,21 @@ export default class Search extends React.Component {
     render(){
         return(
         <div className="search">
-        <Form onSubmit={this.handleSubmit}>
-            <FormGroup>
-                <Label for="searchBar">/dpt/ archive</Label>
-                <Input
-                    type="search"
-                    name="search"
-                    id="searchBar"
-                    placeholder="Search for a post"
-                    onChange={this.handleChange}
-                    />
-            </FormGroup>
-        </Form>
+            <Form onSubmit={this.handleSubmit}>
+                <FormGroup>
+                    <Input
+                        type="search"
+                        name="search"
+                        id="searchBar"
+                        placeholder="Search for a post"
+                        onChange={this.handleChange}
+                        />
+                </FormGroup>
+            </Form>
+            { this.state.anyResults
+                ? <PostList hits={this.state.results}/>
+                : null
+            }
         </div>
         );
     }

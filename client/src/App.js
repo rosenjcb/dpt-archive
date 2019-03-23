@@ -7,6 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="threadTitle">/dpt/ - Daily Programming Thread</div>
         <Search/>
       </div>
     );
