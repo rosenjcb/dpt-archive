@@ -1,0 +1,5 @@
+html, body {
+  background-image: linear-gradient(#D1D5EE, #EEF2FF) !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+}

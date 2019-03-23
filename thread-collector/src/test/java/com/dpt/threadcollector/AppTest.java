@@ -1,4 +1,4 @@
-package com.postcard.threadcollector;
+package com.dpt.threadcollector;
 
 import static org.junit.Assert.assertTrue;
 
