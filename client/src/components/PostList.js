@@ -1,13 +1,14 @@
 import React from 'react';
 import Post from './Post';
 
-function PostList(props) {
-    console.log(props);
-    return(
-        <div>
-            {props.hits.map(h => <Post info={h._source}/>)}
-        </div>
-    )
+class PostList extends React.Component{    
+    render(){
+        return(
+            <div>
+               {this.props.hits.map(h => <Post info={h._source} key={h._id}/>)}  
+            </div>
+        )
+    }
 }
 
 export default PostList;

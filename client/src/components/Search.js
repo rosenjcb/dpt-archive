@@ -12,21 +12,15 @@ export default class Search extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        //console.log(this.props.location);
-    }
-
     handleChange(e) {
         this.setState({query: e.target.value});
-        //console.log(this.state.query);
     }
 
     handleSubmit(e) {
-        //console.log(this.state.query);
+        //http://localhost:8080
         Axios.get('http://localhost:8080/search?q=' + this.state.query)
             .then((response) => {
                 this.setState({results: response.data.hits.hits, anyResults: true})
-                console.log(this.state.results)
             })
             .catch(function (error){
                 console.log(error)

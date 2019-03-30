@@ -1,8 +1,24 @@
-.body {
+br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 0; /* change this to whatever height you want it */
+}
+
+body {
     padding-left: 5px;
     padding-right: 5px;
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 5px;
 }
+
+blockquote {
+    margin-block-start: 1em !important;
+    margin-block-end: 1em !important;
+    margin-inline-start: 40px !important;
+    margin-inline-end: 40px !important;
+}
+
 .post {
     background-color: #d6daf0;
     font-family: arial,helvetica,sans-serif; font-size: 10pt;
@@ -59,4 +75,32 @@ a {
     margin-right: 2px;
     margin-top: 0px;
     margin-left: 2px;
+}
+
+.customquotelink{
+    color: #d00 !important;
+    text-decoration: underline !important;
+    display: inline;
+    padding: 0px;
+}
+
+.customblockquote{
+    color: #789922;
+    display: inline;
+}
+
+.customtext{
+    display: inline;
+}
+
+.postMessage{
+    display: block;     
+}
+
+.fileThumb{
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 3px;
+    margin-bottom: 5px;
 }
