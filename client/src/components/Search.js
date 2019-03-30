@@ -17,8 +17,8 @@ export default class Search extends React.Component {
     }
 
     handleSubmit(e) {
-        //http://localhost:8080
-        Axios.get('http://localhost:8080/search?q=' + this.state.query)
+        //http://localhost:8080 <-- Include only in development
+        Axios.get('/search?q=' + this.state.query)
             .then((response) => {
                 this.setState({results: response.data.hits.hits, anyResults: true})
             })

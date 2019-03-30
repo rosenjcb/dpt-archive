@@ -10,7 +10,7 @@ import java.io.IOException;
 @RestController
 public class SearchController {
     private static final String BASEURL = "http://localhost:9200/dpt.posts/_search?q=";
-    @CrossOrigin(origins = "http://localhost:3000") //remove this in production!
+    //@CrossOrigin(origins = "http://localhost:3000") //remove this in production!
     @RequestMapping(value = "/search", method = RequestMethod.GET, produces = "application/json")
     public String greeting(@RequestParam(value="q") String query) throws IOException {
         System.out.println(query);
