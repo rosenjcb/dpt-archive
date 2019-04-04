@@ -23,7 +23,7 @@ public class App {
         //Boolean isLastPage = false;
         ArrayList<String> threads = new ArrayList<>();
         int index = 1; //index is page number and the first page is 1
-        while(index < 2) { //replace "index < 2" with true
+        while(true) { //replace "index < 2" with true
             Request request = new Request.Builder()
                     .url(findThreads + "&page=" + index)
                     .build();
