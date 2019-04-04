@@ -69,12 +69,17 @@
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
           <configuration>
-          <archive>
-            <manifest>
-              <mainClass>com.dpt.threadcollector.App</mainClass>
-            </manifest>
-          </archive>
+            <archive>
+              <manifest>
+                <mainClass>com.dpt.threadcollector.App</mainClass>
+              </manifest>
+            </archive>
           </configuration>
+          <executions>
+            <execution>
+              <phase>package</phase>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
